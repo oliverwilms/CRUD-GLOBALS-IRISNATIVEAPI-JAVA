@@ -18,6 +18,7 @@ COPY  --chown=irisowner irissession.sh /
 RUN chmod +x /irissession.sh 
 
 ###########################################
+RUN sed -i '/jfrog/d' /etc/apt/sources.list
 #### Install Java 8
 RUN apt-get update && \
 	apt-get install -y openjdk-8-jdk && \
